@@ -1,5 +1,6 @@
 import {loadBannerData} from './main.js';
-import {loadHomeContentsData} from './main.js'
+import {loadHomeContentsData} from './main.js';
+import {loadKeyword} from './main.js';
 import {staticContainer, slideContainer, slideBundle, issueContainer, issueBundle} from './main.js';
 const moreBtn = document.querySelector('.sub-menu__more');
 const subSlide = document.querySelector('.sub-menu__silde');
@@ -56,13 +57,16 @@ function displayissue(images) {
     }
     issueContainer.appendChild(issueBundle);
 }
+function displayKeywordRolling(keywords) {
+    // let keywordsTitles = keywords.map(e => )
+}
 let cnt =1;
 let cntSum=5;
 let cnt2 =1;
 function displaymoreContents(images) {
     cnt2++;
-    let imageArr = images.map( e => e.eventContent.imgurl);
-    let prodArr = images.map( e => e.eventContent.title);
+    let imageInfoArr = images.map( e => ({imgurl : e.eventContent.imgurl, title : e.eventContent.title }));
+    console.log(imageInfoArr);
     let div = document.createElement('div');
     div.className = "divBox";
     let ul;
@@ -75,15 +79,14 @@ for(let i=cnt; i<=cntSum; i++) {
     let liTitle = document.createElement("li");
     let liDesc = document.createElement("li");
     let liTheme = document.createElement("li");
-    let titleStr = document.createTextNode(`${prodArr[i]}`);
+    let titleStr = document.createTextNode(`${imageInfoArr[i].title}`);
     liImg.className = `sub-slide__img${i}`;
     img.className = "img__more";
-    img.src = `${imageArr[i]}`;
+    img.src = `${imageInfoArr[i].imgurl}`;
     liTitle.className = "sub-slide__title";
     liDesc.className = "sub-slide__desc";
     liTheme.className = "sub-slide__theme";
     ul.className = "sub-slide";
-    // appendchild
     liImg.appendChild(img);
     ul.appendChild(liImg);
     liTitle.appendChild(titleStr);
@@ -126,4 +129,11 @@ loadHomeContentsData()
         displaymoreContents(images);
         getMoreEvent(images);
     })
+
+loadKeyword()
+.then(keywords => {
+    // displayissue(images);
+    displayKeywordRolling(keywords);
+    // getMoreEvent(images);
+})
 

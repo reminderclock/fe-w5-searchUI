@@ -12,6 +12,7 @@ const local = "http://localhost"
 const port = 3000;
 const homePath = "/data/homeContents.json";
 const bannerPath = "/data/banner.json"
+const rollingKeyPath = "/data/search10.json"
 
 export function loadBannerData() {
     return fetch(`${local}:${port}${bannerPath}`)
@@ -25,4 +26,11 @@ export function loadHomeContentsData() {
     .then(json => json.contents);
 }
 loadHomeContentsData();
+
+export function loadKeyword() {
+    return fetch(`${local}:${port}${rollingKeyPath}`)
+    .then(response => response.json())
+    .then(json => console.log(json.list.searchKeyword));
+}
+loadKeyword();
 export {staticContainer, slideContainer, slideBundle, issueContainer, issueBanner, issueBundle};
