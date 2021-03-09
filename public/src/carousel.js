@@ -1,13 +1,23 @@
-import {slideContainer, slideBundle, issueBundle} from './main.js';
+import {slideContainer, slideBundle} from './main.js';
 class Carousel {
-    constructor(slideBundle) {
+    constructor() {
         this.children = slideBundle.children;
         this.setTime = 500;
+        // this.keyChildren = keywordRollingDiv.children;
         this.eventSignal = this.eventSignal();
     }
     eventSignal() {
         this.decideClickDirection();
         this.decideMouseoverChange();
+        // this.moveKeyRolling();
+    }
+    // 
+    moveKeyRolling() {
+        keywordBundle.classList.toggle(this.dir);
+        setTimeout(() => {
+            keywordBundle.appendChild(slideBundle.firstElementChild)
+            slideBundle.classList.toggle(this.dir);
+        }, this.setTime);
     }
 
     decideMouseoverChange() {
@@ -60,5 +70,5 @@ class Carousel {
     }
 }
 
-let slide = new Carousel(slideBundle);
+let slide = new Carousel();
 // console.log(issueBundle.tagName)

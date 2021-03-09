@@ -35,13 +35,24 @@
   border-radius: 10px;
 }
 .front .front__search-keyword {
-  left: 480px;
+  left: 370px;
   top: 45px;
   position: absolute;
+  width: 400px;
+  height: 45px;
+  overflow: hidden;
+}
+.front .search-keyword__bundle {
+  position: absolute;
+  top: -165px;
 }
 .front .search-keyword__list {
   font-size: 25px;
   padding-top: 10px;
+}
+.front .search-keyword__bundle.move {
+  transform: translate3d(0, -40px, 0);
+  transition: transform 0.3s;
 }
 
 nav {

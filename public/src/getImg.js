@@ -1,7 +1,7 @@
 import {loadBannerData} from './main.js';
 import {loadHomeContentsData} from './main.js';
 import {loadKeyword} from './main.js';
-import {staticContainer, slideContainer, slideBundle, issueContainer, issueBundle} from './main.js';
+import {staticContainer, slideContainer, slideBundle, issueContainer, issueBundle, keywordRollingDiv} from './main.js';
 const moreBtn = document.querySelector('.sub-menu__more');
 const subSlide = document.querySelector('.sub-menu__silde');
 function displayStaticImg(images) {
@@ -58,7 +58,25 @@ function displayissue(images) {
     issueContainer.appendChild(issueBundle);
 }
 function displayKeywordRolling(keywords) {
-    // let keywordsTitles = keywords.map(e => )
+    let keywordsInfoArr = keywords.map(e => ({title: e.title, rank: e.rank}))
+    console.log(keywordsInfoArr);
+    let ul = document.createElement("ul");
+    ul.className = "search-keyword__bundle";
+    for(let i=0; i<10; i++) {
+        let li = document.createElement("li");
+        let liInnerText = document.createTextNode(`${keywordsInfoArr[i].rank}. ${keywordsInfoArr[i].title}`);
+        li.className = "search-keyword__list";
+        li.appendChild(liInnerText);
+        ul.appendChild(li);
+    }
+    keywordRollingDiv.appendChild(ul);
+    setInterval(function() {
+    ul.classList.toggle('move');
+    setTimeout(() => {
+        ul.appendChild(ul.firstElementChild);
+        ul.classList.toggle('move');
+    }, 300);
+    }, 2000);
 }
 let cnt =1;
 let cntSum=5;

@@ -57,14 +57,27 @@ $title_padding: 40px 300px;
     }
   }
   .front__search-keyword {
-    left: 480px;
+    left: 370px;
     top: 45px;
     position: absolute;
+    // background-color: rebeccapurple;
+    width: 400px;
+    height: 45px;
+    overflow: hidden;
     // font-size: 20px;
   }
+  .search-keyword__bundle {
+    position: absolute;
+    top: -165px;
+  }
+
   .search-keyword__list {
     font-size: 25px;
     padding-top: 10px;
+  }
+  .search-keyword__bundle.move {
+    transform: translate3d(0, -40px, 0);
+    transition: transform 0.3s;
   }
 }
 

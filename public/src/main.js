@@ -5,6 +5,8 @@ const slideBundle = document.querySelector(".slide-bundle");
 const issueContainer = document.querySelector('.issue-banner__slide');
 const issueBanner = document.querySelector('.issue-banner');
 const issueBundle = document.querySelector('.issue-bundle');
+const keywordRollingDiv = document.querySelector('.front__search-keyword');
+// const keywordBundle = document.querySelector('.search-keyword__bundle');
 
 
 
@@ -30,7 +32,7 @@ loadHomeContentsData();
 export function loadKeyword() {
     return fetch(`${local}:${port}${rollingKeyPath}`)
     .then(response => response.json())
-    .then(json => console.log(json.list.searchKeyword));
+    .then(json => json.list.searchKeyword);
 }
 loadKeyword();
-export {staticContainer, slideContainer, slideBundle, issueContainer, issueBanner, issueBundle};
+export {staticContainer, slideContainer, slideBundle, issueContainer, issueBanner, issueBundle, keywordRollingDiv};
