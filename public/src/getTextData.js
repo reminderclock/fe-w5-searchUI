@@ -30,3 +30,19 @@ loadKeyword()
 .then(keywords => {
     displayKeywordRolling(keywords);
 })
+
+const inputBox = document.querySelector('.input-box__input');
+
+document.addEventListener('click', ({target}) => {
+    console.log(target)
+    // console.log(target.closest('ul'));
+    let rollingUl = target.closest('ul');
+    if(!rollingUl) return;
+    let containUl = ul.classList.contains('search-keyword__bundle');
+    if(containUl) {
+        ul.classList.add('remove');
+        keywordRollingDiv.classList.add('remove');
+    }
+    // console.log(if(!ul))
+    // highlight(rollingUl);
+})
