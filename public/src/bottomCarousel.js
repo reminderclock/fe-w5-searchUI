@@ -1,22 +1,14 @@
-import { issueBanner, issueContainer, issueBundle } from './main.js';
-// import {isuueBanner} from '/main.js'
-// const issueBundle = document.querySelector('.issue-bundle');
+import { issueBanner, issueBundle } from './main.js';
 class BottomCarousel {
-    constructor(issueBanner) {
-        // this.issueBanner = issue
+    constructor() {
         this.children = issueBundle.children;
         this.setTime = 500;
         this.dir = '';
         this.eventSignal = this.eventSignal();
     }
     eventSignal() {
-        // let a = Array.from(this.children);
-        // console.log(a);
         this.decideClickDirection();
-        // this.decideMouseoverChange();
     }
-
-
     decideClickDirection() {
         issueBanner.addEventListener('click', ({target}) => {
             if(target.classList.contains('fa-arrow-right')) {
@@ -47,4 +39,4 @@ class BottomCarousel {
     }
 }
 
-let bottomSlide = new BottomCarousel(issueBundle);
+let bottomSlide = new BottomCarousel();

@@ -35,15 +35,12 @@
   border-radius: 10px;
 }
 .front .front__search-keyword {
-  left: 370px;
+  left: 31%;
   top: 45px;
   position: absolute;
   width: 400px;
   height: 45px;
   overflow: hidden;
-}
-.front .search-keyword__bundle {
-  position: absolute;
 }
 .front .search-keyword__list {
   font-size: 25px;

@@ -4,10 +4,10 @@ import {keywordRollingDiv} from './main.js';
 const ul = document.createElement("ul");
 ul.className = "search-keyword__bundle";
 function displayKeywordRolling(keywords) {
-    let keywordsInfoArr = keywords.map(e => ({title: e.title, rank: e.rank}))
+    const keywordsInfoArr = keywords.map(e => ({title: e.title, rank: e.rank}))
     for(let i=0; i<10; i++) {
-        let li = document.createElement("li");
-        let liInnerText = document.createTextNode(`${keywordsInfoArr[i].rank}. ${keywordsInfoArr[i].title}`);
+        const li = document.createElement("li");
+        const liInnerText = document.createTextNode(`${keywordsInfoArr[i].rank}. ${keywordsInfoArr[i].title}`);
         li.className = "search-keyword__list";
         li.appendChild(liInnerText);
         ul.appendChild(li);
