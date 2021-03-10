@@ -27,6 +27,11 @@
   height: 50px;
   width: 650px;
 }
+.front .front__input-box .input-box__input:focus {
+  outline: none;
+  border: solid 2px red;
+  border-radius: 10px;
+}
 .front .front__input-box input {
   margin: 0 auto;
   border: none;
@@ -35,16 +40,15 @@
   border-radius: 10px;
 }
 .front .front__search-keyword {
-  left: 370px;
+  left: 31%;
   top: 45px;
   position: absolute;
   width: 400px;
   height: 45px;
   overflow: hidden;
 }
-.front .search-keyword__bundle {
-  position: absolute;
-  top: -165px;
+.front .front__search-keyword.remove {
+  display: none;
 }
 .front .search-keyword__list {
   font-size: 25px;
@@ -53,6 +57,9 @@
 .front .search-keyword__bundle.move {
   transform: translate3d(0, -40px, 0);
   transition: transform 0.3s;
+}
+.front .search-keyword__bundle.remove {
+  display: none;
 }
 
 nav {
