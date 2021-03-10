@@ -47,5 +47,4 @@ class BottomCarousel {
     }
 }
 
-console.log(issueBundle)
 let bottomSlide = new BottomCarousel(issueBundle);
