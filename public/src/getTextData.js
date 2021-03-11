@@ -32,17 +32,15 @@ loadKeyword()
 })
 
 const inputBox = document.querySelector('.input-box__input');
-
+const hotKeywordBox = document.querySelector('.front__hotKeyword-box');
 document.addEventListener('click', ({target}) => {
-    console.log(target)
-    // console.log(target.closest('ul'));
     let rollingUl = target.closest('ul');
     if(!rollingUl) return;
     let containUl = ul.classList.contains('search-keyword__bundle');
-    if(containUl) {
+    if(containUl || containInput) {
         ul.classList.add('remove');
         keywordRollingDiv.classList.add('remove');
+        inputBox.focus();
+        hotKeywordBox.classList.add('focus');
     }
-    // console.log(if(!ul))
-    // highlight(rollingUl);
 })
