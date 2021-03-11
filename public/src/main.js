@@ -5,6 +5,8 @@ const issueContainer = document.querySelector('.issue-banner__slide');
 const issueBanner = document.querySelector('.issue-banner');
 const issueBundle = document.querySelector('.issue-bundle');
 const keywordRollingDiv = document.querySelector('.front__search-keyword');
+const hotKeywordBox = document.querySelector('.front__hotKeyword-box');
+const inputBox = document.querySelector('.input-box__input');
 
 
 
@@ -37,4 +39,4 @@ export async function loadKeyword() {
     }
 
 loadKeyword();
-export {staticContainer, slideContainer, slideBundle, issueContainer, issueBanner, issueBundle, keywordRollingDiv};
+export {staticContainer, slideContainer, slideBundle, issueContainer, issueBanner, issueBundle, keywordRollingDiv, hotKeywordBox, inputBox};

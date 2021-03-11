@@ -55,12 +55,14 @@
   display: none;
   position: absolute;
   top: 49px;
-  background-color: royalblue;
+  background-color: white;
   width: 650px;
-  height: 400px;
 }
 .front .front__hotKeyword-box.focus {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100px;
   z-index: 3;
   border-radius: 10px;
   border: solid 2px red;
