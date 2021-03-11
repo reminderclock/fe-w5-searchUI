@@ -27,10 +27,14 @@ export function loadHomeContentsData() {
 }
 loadHomeContentsData();
 
-export function loadKeyword() {
-    return fetch(`${local}:${port}${rollingKeyPath}`)
-    .then(response => response.json())
-    .then(json => json.list.searchKeyword);
-}
+export async function loadKeyword() {
+    const response = await fetch(`${local}:${port}${rollingKeyPath}`,
+    {
+        method: 'GET',
+    });
+    const data = await response.json();
+    return data.list.searchKeyword;
+    }
+
 loadKeyword();
 export {staticContainer, slideContainer, slideBundle, issueContainer, issueBanner, issueBundle, keywordRollingDiv};
