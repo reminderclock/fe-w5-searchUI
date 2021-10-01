@@ -2,6 +2,7 @@ import {loadKeyword} from './main.js';
 import {keywordRollingDiv} from './main.js';
 
 const ul = document.createElement("ul");
+
 function displayKeywordRolling(keywords) {
     ul.className = "search-keyword__bundle";
     const keywordsInfoArr = keywords.map(e => ({title: e.title, rank: e.rank}))
@@ -32,4 +33,22 @@ loadKeyword()
 })
 
 
+
 export {ul}
+
+const inputBox = document.querySelector('.input-box__input');
+
+document.addEventListener('click', ({target}) => {
+    console.log(target)
+    // console.log(target.closest('ul'));
+    let rollingUl = target.closest('ul');
+    if(!rollingUl) return;
+    let containUl = ul.classList.contains('search-keyword__bundle');
+    if(containUl) {
+        ul.classList.add('remove');
+        keywordRollingDiv.classList.add('remove');
+    }
+    // console.log(if(!ul))
+    // highlight(rollingUl);
+})
+

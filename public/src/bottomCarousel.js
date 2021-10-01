@@ -1,6 +1,11 @@
+
 import { issueBanner, issueBundle } from './main.js';
 class BottomCarousel {
     constructor() {
+
+import { issueBanner, issueContainer, issueBundle } from './main.js';
+class BottomCarousel {
+    constructor(issueBanner) {
         this.children = issueBundle.children;
         this.setTime = 500;
         this.dir = '';
@@ -9,6 +14,8 @@ class BottomCarousel {
     eventSignal() {
         this.decideClickDirection();
     }
+
+
     decideClickDirection() {
         issueBanner.addEventListener('click', ({target}) => {
             if(target.classList.contains('fa-arrow-right')) {
@@ -39,4 +46,5 @@ class BottomCarousel {
     }
 }
 
-let bottomSlide = new BottomCarousel();
+
+let bottomSlide = new BottomCarousel(issueBundle);

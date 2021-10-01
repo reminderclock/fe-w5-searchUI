@@ -8,6 +8,7 @@ $title_padding: 40px 300px;
 // $line_height: percentage(20px / $font_size);
 
 * {
+
   font: {
     size: $font_size;
     family: $font_family;
@@ -28,6 +29,7 @@ $title_padding: 40px 300px;
   background-color: lavenderblush;
   padding: $title_padding;
   .front__logo {
+
     .logo__img {
       width: 119px;
       // height: 70px;
@@ -35,11 +37,14 @@ $title_padding: 40px 300px;
   }
   .front__input-box {
     margin-left: 40px;
+
     position: relative;
+
     .input-box__input {
       height: 50px;
       width: 650px;
     }
+    .input-box__input:focus {
     .input-box__input:focus {
       outline: none;
       border: solid 2px red;
@@ -55,6 +60,19 @@ $title_padding: 40px 300px;
   .front__search-keyword {
     top: 0px;
     padding: 0 20px;
+    left: 31%;
+    top: 45px;
+    position: absolute;
+    width: 400px;
+    height: 45px;
+    overflow: hidden;
+  }
+
+  .front__search-keyword.remove {
+    display: none;
+
+    left: 370px;
+    top: 45px;
     position: absolute;
     width: 650px;
     height: 45px;
@@ -71,7 +89,6 @@ $title_padding: 40px 300px;
     top: 49px;
     background-color: white;
     width: 650px;
-    // height: 100px;
   }
   .front__hotKeyword-box.focus {
     display: flex;
@@ -81,16 +98,13 @@ $title_padding: 40px 300px;
     z-index: 3;
     border-radius: 10px;
     border: solid 2px red;
+    top: -165px;
   }
 
-  // .front__hotKeyword-box.remove{
-  //   display: inline;
-  // }
 
   .search-keyword__list {
     font-size: 25px;
     padding-top: 10px;
-    // margin-top: 10px;
   }
   .search-keyword__bundle {
     z-index: -1;
@@ -173,6 +187,16 @@ nav {
       display: flex;
       position: absolute;
       justify-content: flex-start;
+  }
+  .main-banner__slide {
+    border: 1px solid #ccc;
+    width: 685px;
+    overflow: hidden;
+    position: relative;
+    .slide-bundle {
+      display: flex;
+      position: absolute;
+      justify-content: flex-start;
       left: -585px;
     }
     .slide-bundle li {
@@ -213,6 +237,7 @@ nav {
     .slide__under-btn2,
     .slide__under-btn3 {
       height: 5px;
+      width: 15px;
       background-color: #ccc;
     }
     .slide__under-btn1:hover,
@@ -274,13 +299,16 @@ nav {
   }
   .issue-banner__slide {
     padding-top: 30px;
+    align-self: flex-start;
+  }
+  .issue-banner__slide {
+    padding-top: 30px;
     border: 1px solid #ccc;
     overflow: hidden;
     width: 1260px;
     height: 300px;
     position: relative;
   }
-  // .issue-list
   .issue-bundle {
     position: absolute;
     left: -225px;
