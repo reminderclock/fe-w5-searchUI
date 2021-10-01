@@ -2,7 +2,6 @@ import {loadBannerData} from './main.js';
 import {loadHomeContentsData} from './main.js';
 
 import {staticContainer, slideBundle, issueContainer, issueBundle} from './main.js';
-
 import {loadKeyword} from './main.js';
 import {staticContainer, slideContainer, slideBundle, issueContainer, issueBundle, keywordRollingDiv} from './main.js';
 
@@ -15,10 +14,9 @@ function displayStaticImg(images) {
 }
 function displaySlideImg(images) {
 for(let i=1; i<=3; i++) {
-
-    let img = document.createElement("img");
-    let li = document.createElement("li");
-    let a = document.createElement("a");
+    const img = document.createElement("img");
+    const li = document.createElement("li");
+    const a = document.createElement("a");
 
     img.className = `slide__img${i}`;
     a.className = `slide__link${i}`;
@@ -66,6 +64,7 @@ function displayissue(images) {
     issueContainer.appendChild(issueBundle);
 }
 
+
 function displayKeywordRolling(keywords) {
     let keywordsInfoArr = keywords.map(e => ({title: e.title, rank: e.rank}))
     console.log(keywordsInfoArr);
@@ -88,6 +87,7 @@ function displayKeywordRolling(keywords) {
     }, 2000);
 }
 
+
 let cnt =1;
 let cntSum=5;
 let cnt2 =1;
@@ -95,6 +95,31 @@ function displaymoreContents(images) {
     cnt2++;
     const imageInfoArr = images.map( e => ({imgurl : e.eventContent.imgurl, title : e.eventContent.title }));
     const div = document.createElement('div');
+    div.className = "divBox";
+    let ul;
+    for(let i=cnt; i<=cntSum; i++) {
+        ul = document.createElement("ul")
+        const liImg = document.createElement("li");
+        const img = document.createElement("img");
+        const liTitle = document.createElement("li");
+        const liDesc = document.createElement("li");
+        const liTheme = document.createElement("li");
+        const titleStr = document.createTextNode(`${imageInfoArr[i].title}`);
+        liImg.className = `sub-slide__img${i}`;
+        img.className = "img__more";
+        img.src = `${imageInfoArr[i].imgurl}`;
+        liTitle.className = "sub-slide__title";
+        liDesc.className = "sub-slide__desc";
+        liTheme.className = "sub-slide__theme";
+        ul.className = "sub-slide";
+        liImg.appendChild(img);
+        ul.appendChild(liImg);
+        liTitle.appendChild(titleStr);
+        ul.appendChild(liTitle);
+        ul.appendChild(liDesc);
+        ul.appendChild(liTheme);
+        div.appendChild(ul);
+    }
     div.className = "divBox";
     let ul;
     for(let i=cnt; i<=cntSum; i++) {
@@ -162,18 +187,9 @@ let cnt3 =0;
 function getMoreEvent(images) {
     cnt3++;
     moreBtn.removeEventListener('click', () => {
-
         return displaymoreContents(images);
     });
     moreBtn.addEventListener('click', () => {
-
-        console.log('a');
-        return displaymoreContents(images);
-    });
-    moreBtn.addEventListener('click', () => {
-        console.log('a');
-
-        return displaymoreContents(images);
     })
 }
 
@@ -181,7 +197,6 @@ function getMoreEvent(images) {
 
 loadBannerData()
     .then(images => {
-
         displayStaticImg(images);
         displaySlideImg(images);
     })
@@ -196,9 +211,8 @@ loadHomeContentsData()
 
 loadKeyword()
 .then(keywords => {
-    // displayissue(images);
     displayKeywordRolling(keywords);
-    // getMoreEvent(images);
 })
+
 
 
