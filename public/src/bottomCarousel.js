@@ -1,20 +1,31 @@
+
+import { issueBanner, issueBundle } from './main.js';
+class BottomCarousel {
+    constructor() {
+
 import { issueBanner, issueContainer, issueBundle } from './main.js';
 // import {isuueBanner} from '/main.js'
 // const issueBundle = document.querySelector('.issue-bundle');
 class BottomCarousel {
     constructor(issueBanner) {
         // this.issueBanner = issue
+
         this.children = issueBundle.children;
         this.setTime = 500;
         this.dir = '';
         this.eventSignal = this.eventSignal();
     }
     eventSignal() {
+
+        this.decideClickDirection();
+    }
+
         // let a = Array.from(this.children);
         // console.log(a);
         this.decideClickDirection();
         // this.decideMouseoverChange();
     }
+
 
 
     decideClickDirection() {
@@ -47,5 +58,6 @@ class BottomCarousel {
     }
 }
 
-console.log(issueBundle)
+
 let bottomSlide = new BottomCarousel(issueBundle);
+
