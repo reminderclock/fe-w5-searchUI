@@ -8,10 +8,20 @@ $title_padding: 40px 300px;
 // $line_height: percentage(20px / $font_size);
 
 * {
+
+  // min-width: 1200px;
+  //   color: $font_color;
+
+  //   // Property Nesting
+
   font: {
     size: $font_size;
     family: $font_family;
   }
+
+
+  //   line-height: $line_height;
+
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -28,6 +38,7 @@ $title_padding: 40px 300px;
   background-color: lavenderblush;
   padding: $title_padding;
   .front__logo {
+
     .logo__img {
       width: 119px;
       // height: 70px;
@@ -35,16 +46,19 @@ $title_padding: 40px 300px;
   }
   .front__input-box {
     margin-left: 40px;
+
     .input-box__input {
       height: 50px;
       width: 650px;
     }
+
     .input-box__input:focus {
       // border: none; /* <-- This thing here */
       outline: none;
       border: solid 2px red;
       border-radius: 10px;
     }
+
     input {
       margin: 0 auto;
       border: none; /* <-- This thing here */
@@ -53,6 +67,7 @@ $title_padding: 40px 300px;
     }
   }
   .front__search-keyword {
+
     left: 31%;
     top: 45px;
     position: absolute;
@@ -63,6 +78,20 @@ $title_padding: 40px 300px;
 
   .front__search-keyword.remove {
     display: none;
+
+    left: 370px;
+    top: 45px;
+    position: absolute;
+    // background-color: rebeccapurple;
+    width: 400px;
+    height: 45px;
+    overflow: hidden;
+    // font-size: 20px;
+  }
+  .search-keyword__bundle {
+    position: absolute;
+    top: -165px;
+
   }
 
   .search-keyword__list {
@@ -77,17 +106,20 @@ $title_padding: 40px 300px;
   .search-keyword__bundle.remove {
     display: none;
   }
+
 }
 
 nav {
   display: flex;
   justify-content: space-between;
+
   padding: 20px 40px;
   min-width: 1200px;
   .nav__category,
   .special-menu,
   .hash-tag,
   .add-on {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,23 +152,32 @@ nav {
 }
 
 .main-banner {
+
   position: relative;
   margin: 40px;
+
+  position: relative;
+  margin: 40px;
+
+
   display: flex;
   justify-content: center;
   font-size: 0;
   min-width: 1200px;
+
   a {
     font-size: 0;
   }
   .main-banner__static {
     border: 1px solid #ccc;
+
   }
   .static__img1 {
     margin: 0 40px;
   }
   img {
     display: block;
+
   }
   .main-banner__slide {
     border: 1px solid #ccc;
@@ -147,16 +188,49 @@ nav {
       display: flex;
       position: absolute;
       justify-content: flex-start;
+
+  }
+  .main-banner__slide {
+    // display: block;
+    border: 1px solid #ccc;
+    // background-color: red;
+    // padding: 20px 0;
+    // height: 342px;
+    width: 685px;
+    // margin-left: 500px;
+    // z-index: 1;
+    // left: 4%;
+    // height: 700px;
+    overflow: hidden;
+    // top: 30px;
+    // position: absolute;
+    position: relative;
+    // left: 400px;
+    .slide-bundle {
+      display: flex;
+      // width: 1800px;
+      // display: inline-block;
+      position: absolute;
+      justify-content: flex-start;
+      // background-color: greenyellow;
+      // top: 30px;
+
       left: -585px;
     }
     .slide-bundle li {
       display: inline-block;
       margin-left: 100px;
+
+      // margin-left: 30px;
+      // display: flex;
+      // justify-content: space-between;
+
     }
     .slide-bundle li:nth-child(3) {
       margin-right: 100px;
     }
     .slide-bundle.right {
+
       transform: translate3d(585px, 0, 0);
       transition: transform 0.5s;
     }
@@ -186,8 +260,13 @@ nav {
     .slide__under-btn1,
     .slide__under-btn2,
     .slide__under-btn3 {
+
+      // position: absolute;
       width: 15px;
       height: 5px;
+      // top: 300px;
+      // left: 300px;
+
       background-color: #ccc;
     }
     .slide__under-btn1:hover,
@@ -210,6 +289,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .sub-menu__more {
     background-color: green;
     height: 100px;
@@ -227,6 +307,7 @@ nav {
 }
 .issue-banner {
   position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -235,7 +316,11 @@ nav {
     size: 30px;
     position: absolute;
     top: 50%;
+
+    // left: 40px;
     z-index: 1;
+    // left: 30px;
+
   }
   .arrow__left {
     left: 17%;
@@ -245,15 +330,30 @@ nav {
   }
 
   .issue-banner__title {
+
     align-self: flex-start;
   }
   .issue-banner__slide {
     padding-top: 30px;
+
+    // display: block;
+    align-self: flex-start;
+  }
+  .issue-banner__slide {
+    // align-self: flex-;
+    // align-items: center;
+    padding-top: 30px;
+
     border: 1px solid #ccc;
     overflow: hidden;
     width: 1260px;
     height: 300px;
+
     position: relative;
+
+    // position: absolute;
+    position: relative;
+
   }
   // .issue-list
   .issue-bundle {
@@ -275,11 +375,14 @@ nav {
   }
 
   .issue-bundle.right {
+
     transform: translate3d(245px, 0, 0);
     transition: transform 0.5s;
   }
   .issue-bundle.left {
+
     transform: translate3d(-245px, 0, 0);
     transition: transform 0.5s;
   }
 }
+
